@@ -20,3 +20,10 @@
         - npm install -g webpack-dev-server@1
 3° Modularizando uma aplicação
     * criar um novo arquivo em src/app.js;
+
+4° Criando uma aplicação em React
+    * instalar dependências React e ReactDOM;
+        - npm install --save react@15.4 react-dom@15.4
+    * criar um componente em src/app.js
+        - obs: para resolver o problema na aula MRW#05 
+        - (npm install -g babel webpack webpack webpack-dev-server)
