@@ -1,0 +1,12 @@
+1° configuração básica do webpack 
+    * criar o package.json; 
+        - no diretório vazio "echo {} >> package.json"
+    * instalar o webpack como dependência de desenvolvimento;
+        - npm install --save-dev webpack@1
+    * criar arquivo webpack.config.js
+        - configurar para ler um arquivo e gerar o bundle;
+    * criar o arquivo src/index.js
+        - mkdir src
+    * gerar o bundle com webpack (precisa instalar o webpack global)
+        - npm install -g webpack@1
+    * criar o arquivo index.html e adicionar o bundle
