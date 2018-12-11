@@ -10,3 +10,11 @@
     * gerar o bundle com webpack (precisa instalar o webpack global)
         - npm install -g webpack@1
     * criar o arquivo index.html e adicionar o bundle
+
+2° Usando o server do webpack
+    * instalar dependência para o server
+        - npm install --save-dev webpack-dev-server@1
+    * adicionar o publicPath no webpack.config;
+        - passar o caminho correto no index.html
+    * subir o server de desenvolviment
+        - npm install -g webpack-dev-server@1
