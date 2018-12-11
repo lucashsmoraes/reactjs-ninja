@@ -1,10 +1,9 @@
 'use strict'
+import React from 'react'
+import {render} from 'react-dom'
+import Title from './app'
 
-var React = require('react')
-var ReactDOM = require('react-dom')
-var Title = require('./app')
-
-ReactDOM.render(
+render(
   React.createElement(Title),
   document.querySelector('[data-js="app"]')
 )

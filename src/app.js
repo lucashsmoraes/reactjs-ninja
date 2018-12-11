@@ -1,6 +1,5 @@
 'use strict'
-
-var React = require('react')
+import React from  'react'
 
 var Title = React.createClass({
   render: function () {
@@ -8,4 +7,4 @@ var Title = React.createClass({
   }
 })
 
-module.exports = Title
+export default Title
