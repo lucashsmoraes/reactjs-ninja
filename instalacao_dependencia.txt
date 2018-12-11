@@ -18,3 +18,5 @@
         - passar o caminho correto no index.html
     * subir o server de desenvolviment
         - npm install -g webpack-dev-server@1
+3° Modularizando uma aplicação
+    * criar um novo arquivo em src/app.js;
