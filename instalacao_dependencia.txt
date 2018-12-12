@@ -40,3 +40,10 @@
     * atualizar src/index.js, usando import
     * utilizar import com shorthand notation para o método
         - render do ReactDOM
+6° Configurando JSX no babel e sourcemaps no webpack
+    * adicionar o preset do react;
+        - npm install --save-dev babel-preset-react@6
+    * atualizar o .babellrc, adcionando esse preset;
+    * atualizar os arquivos src/app.js e src/index.js, para usar JSX;
+    * adicionar entrada de sourcemaps no webpack.config
+        - module export (devtool: 'source-map')
