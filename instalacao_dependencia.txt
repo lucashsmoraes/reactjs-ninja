@@ -1,4 +1,4 @@
-1° configuração básica do webpack 
+1° configuração básica do webpack (branch react-webpack)
     * criar o package.json; 
         - no diretório vazio "echo {} >> package.json"
     * instalar o webpack como dependência de desenvolvimento;
@@ -65,3 +65,6 @@
         - npm install --save-dev standard standard-loader@4
     * editar o webpack.config, adcionando o standard
     * npm install --save-dev webpack-validator
+
+10° Props (branch github-app)
+    * 
