@@ -70,3 +70,5 @@
     * usando props
 
 11° Atributos do html com props
+
+12° getDefaultProps
