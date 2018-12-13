@@ -1,10 +1,9 @@
 'use strict'
-
 import React from 'react'
 
-var App = React.createClass({
+const App = React.createClass({
   render: function () {
-    return <h2>Aplicação</h2>
+    return <h2>Ignorar o Lint</h2>
   }
 })
 
