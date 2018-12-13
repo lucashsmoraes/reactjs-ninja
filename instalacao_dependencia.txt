@@ -67,4 +67,6 @@
     * npm install --save-dev webpack-validator
 
 10° Props (branch github-app)
-    * 
+    * usando props
+
+11° Atributos do html com props
