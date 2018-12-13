@@ -95,3 +95,10 @@
                 )
             }
         }
+16° Conhecendo a prop "Key"
+    * ex Key
+        <div className='container' data-id='1'>
+            {['blue', 'red', 'green'].map((square) => (
+          <Square key={square} color={square}/>
+            ))}       
+        </div>
