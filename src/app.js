@@ -6,7 +6,7 @@ const App = React.createClass({
   render: function () {
     return (
     <div className='container' data-id='1'> 
-      <Title name='Lucas'/>
+      <Title name='Lucas' lastName={[1,2,3]}/>
     </div>
     )
   }

@@ -72,3 +72,5 @@
 11° Atributos do html com props
 
 12° getDefaultProps
+
+13° Passando outros tipos de dados via props
