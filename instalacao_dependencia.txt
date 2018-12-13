@@ -54,3 +54,5 @@
     * atualizar o .babelrc
     * criar um arquivo server.js para rodar com o Node.js
     * criar a entrada start no package.json
+8° Utilizando react hot loader
+    * Atualizar arquivo src/index.js

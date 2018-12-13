@@ -1,10 +1,11 @@
 'use strict'
-import React from  'react'
 
-var Title = React.createClass({
+import React from 'react'
+
+var App = React.createClass({
   render: function () {
-    return <h1>Teste webpack server</h1>
+    return <h2>Aplicação</h2>
   }
 })
 
-export default Title
+export default App
