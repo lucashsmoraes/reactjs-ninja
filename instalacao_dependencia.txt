@@ -74,3 +74,13 @@
 12° getDefaultProps
 
 13° Passando outros tipos de dados via props
+
+14° Renderizando componentes
+    * React.createClass();
+    * Funções puras;
+        - Ex:
+        const Title = (props) => (
+        <h1> Olá {`${props.name} ${props.lastName}`}</h1>
+        )
+    * Classes (ES2015)
+    
