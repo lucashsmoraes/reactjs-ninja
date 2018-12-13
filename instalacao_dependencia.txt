@@ -77,10 +77,21 @@
 
 14° Renderizando componentes
     * React.createClass();
+        - commits anteriores ao 13
     * Funções puras;
-        - Ex:
-        const Title = (props) => (
-        <h1> Olá {`${props.name} ${props.lastName}`}</h1>
-        )
+        - Ex: arrow function ES6
+            const Title = (props) => (
+                <h1> Olá {`${props.name} ${props.lastName}`}</h1>
+            )
     * Classes (ES2015)
-    
+15 ° Renderizando componentes com classes do ES62015
+    * ex class:     
+        class App extends Component{
+            render() {
+                return (
+                    <div className='container' data-id='1'> 
+                        <Title name='Lucas'/>
+                    </div>
+                )
+            }
+        }

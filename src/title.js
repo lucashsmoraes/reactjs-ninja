@@ -8,6 +8,10 @@ import React from 'react'
 const Title = ({name, lastName}) => (
     <h1> Olá {`${name} ${lastName}`}</h1>
 )
+Title.defaultProps = {
+    name: 'Desconhecido',
+    lastName: "sem sobrenome"
+}
 
 // const Title = React.createClass({
 //     getDefaultProps: function () {
