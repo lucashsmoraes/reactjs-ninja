@@ -109,4 +109,9 @@
     * const Button = ({ children }) => (
         <button>{children}</button>
      )
+19° Composição
+    * ex:
+        - const sum = (x, y) => x + y
+        - sum(sum(1,2), 3)
+        - sum(sum(sum(1,3), 5), sum(1,6))
 
