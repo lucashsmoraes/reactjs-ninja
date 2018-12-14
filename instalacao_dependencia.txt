@@ -104,3 +104,9 @@
         </div>
 
 17° Eventos
+
+18° A prop "children"
+    * const Button = ({ children }) => (
+        <button>{children}</button>
+     )
+
