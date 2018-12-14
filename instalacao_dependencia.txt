@@ -127,3 +127,6 @@
     * ex: arrow function
         - var sum = (x, y) => x + y
         - var add1 = x => sum(x, 1)
+
+23° Stateful vs stateless
+    - funções puras são stateless
