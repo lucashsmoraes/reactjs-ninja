@@ -121,3 +121,9 @@
         - like-button.js
 21° State
 
+22° Entendendo arrow functions
+    * ex: normal function
+        - var sum = function (x, y) { return x + y}
+    * ex: arrow function
+        - var sum = (x, y) => x + y
+        - var add1 = x => sum(x, 1)
