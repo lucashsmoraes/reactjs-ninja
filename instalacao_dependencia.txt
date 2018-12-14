@@ -115,3 +115,8 @@
         - sum(sum(1,2), 3)
         - sum(sum(sum(1,3), 5), sum(1,6))
 
+20° continuação ao commmit composição
+    * foi criado dois arquivos
+        - search-button.js
+        - like-button.js
+
