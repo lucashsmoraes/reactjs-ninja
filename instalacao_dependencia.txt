@@ -130,3 +130,5 @@
 
 23° Stateful vs stateless
     - funções puras são stateless
+
+24° 
