@@ -131,4 +131,5 @@
 23° Stateful vs stateless
     - funções puras são stateless
 
-24° 
+24° Updating
+    * componentWillReceiveProps(nextProps)
