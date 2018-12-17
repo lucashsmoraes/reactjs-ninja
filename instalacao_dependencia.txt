@@ -133,3 +133,6 @@
 
 24° Updating
     * componentWillReceiveProps(nextProps)
+
+25° LifeCycle: fluxo de atualização
+    * shouldComponentUpdate
