@@ -136,3 +136,10 @@
 
 25° LifeCycle: fluxo de atualização
     * shouldComponentUpdate
+
+26° LifeCycle: fluxo de atualização
+    * componentWillUpdate
+
+27° propTypes (depreciado)
+
+28° Introdução à formulários no React
