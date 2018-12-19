@@ -151,3 +151,7 @@
 30° formulários
     * select
     * option
+
+31° formulários
+    * textarea
+        - usar defaultValue ou onChange
