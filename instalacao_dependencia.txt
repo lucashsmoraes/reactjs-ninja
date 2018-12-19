@@ -159,3 +159,5 @@
     * onChange
     * onInput
     * onSubmit
+
+33° setState é assíncrono
