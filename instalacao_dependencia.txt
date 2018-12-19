@@ -155,3 +155,7 @@
 31° formulários
     * textarea
         - usar defaultValue ou onChange
+32° eventos para componentes de formulário
+    * onChange
+    * onInput
+    * onSubmit
