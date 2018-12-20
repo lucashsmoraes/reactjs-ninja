@@ -169,3 +169,5 @@
 
 36° Criando o Container Component da aplicação
     * criar o estado da aplicação
+
+37° criando o objeto de estado da aplicação
