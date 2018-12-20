@@ -166,3 +166,6 @@
 
 35° GitHub app - separando os componentes
     * marcar propTypes
+
+36° Criando o Container Component da aplicação
+    * criar o estado da aplicação
