@@ -175,3 +175,5 @@
 38° Passando o state via props para o componente
 
 39° Fazendo request de dados do usuário
+
+40° Populando o componente UserInfo
