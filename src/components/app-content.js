@@ -11,13 +11,13 @@ const AppContent = ({ userInfo, repos, starred, handleSearch, getRepos, getStarr
     {!!userInfo && <UserInfo userInfo={userInfo} />}
     {!!userInfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
 
-    {!!repos.len && <Repos
+    {!!repos.length && <Repos
       className='repos'
       title='Repositórios:'
       repos={repos}
     />}
 
-    {!!starred.len && <Repos
+    {!!starred.length && <Repos
       className='starred'
       title='Favoritos:'
       repos={starred}
