@@ -173,3 +173,5 @@
 37° criando o objeto de estado da aplicação
 
 38° Passando o state via props para o componente
+
+39° Fazendo request de dados do usuário
