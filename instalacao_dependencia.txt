@@ -171,3 +171,5 @@
     * criar o estado da aplicação
 
 37° criando o objeto de estado da aplicação
+
+38° Passando o state via props para o componente
