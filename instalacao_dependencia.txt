@@ -183,3 +183,5 @@
 42° metodo para buscar Repositório e favoritos
 
 43° buscar Repositório do usuário pesquisado
+
+44° Eventos desabilitar / habilitar campo
