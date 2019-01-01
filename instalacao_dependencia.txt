@@ -185,3 +185,5 @@
 43° buscar Repositório do usuário pesquisado
 
 44° Eventos desabilitar / habilitar campo
+
+45° Loading enquando estiver buscando 
