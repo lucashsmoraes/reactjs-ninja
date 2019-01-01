@@ -189,3 +189,6 @@
 45° Loading enquando estiver buscando 
 
 45° Formas de fazer "bind" do this em eventos
+
+46° spread operator
+
