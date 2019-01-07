@@ -2,6 +2,7 @@
 
 import { expect } from 'chai'
 import reduce from './reduce'
+import reduceRight from './reduce-right'
 
 test('reduce should be a function', () => {
     expect(reduce).to.be.a('function')
@@ -43,6 +44,12 @@ test('reduce ([0,1], (acc, item, index) => acc + index, 0) should return 1', () 
 test('reduce ([1,2], (acc, item, index, array) => acc + array[index], 0) should return 3', () => {
     const before = reduce ([1,2], (acc, item, index, array) => acc + array[index], 0)
     const after = 3
+    expect(before).to.be.deep.equal(after)
+})
+
+test('reduceRigth(["cas", "lu"], (acc, item) => acc + item, "") should return "lucas"', () => {
+    const before = reduceRight(['cas', 'lu'], (acc, item) => acc + item, '')
+    const after = 'lucas'
     expect(before).to.be.deep.equal(after)
 })
 
