@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "webpack-dashboard -- node server.js",
+    "build": "webpack --progress --config webpack.prod.config -p"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -16,6 +17,7 @@
     "standard-loader": "^4.0.0",
     "style-loader": "^0.23.1",
     "webpack": "^1.15.0",
+    "webpack-dashboard": "^2.0.0",
     "webpack-dev-server": "^1.16.5",
     "webpack-validator": "^3.0.1"
   },
