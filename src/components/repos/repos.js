@@ -1,6 +1,7 @@
 'use strict'
 
 import React from 'react'
+import './repos.css'
 
 const Repos = ({ className, title, repos }) => (
   <div className={className}>

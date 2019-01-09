@@ -1,6 +1,7 @@
 'user strict'
 
 import React from 'react'
+import './user-info.css'
 
 const UserInfo = ({ userInfo }) => (
   <div className='user-info'>

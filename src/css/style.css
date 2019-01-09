@@ -10,13 +10,13 @@ body {
   padding: 0;
 }
 
-.app {
+/* .app {
   float: left;
   padding: 30px;
   width: 100%;
-}
+} */
 
-.user-info img {
+/* .user-info img {
   float: left;
   margin: 0 20px 20px 0;
   max-height: 200px;
@@ -24,9 +24,9 @@ body {
 
 .repos-info li {
   padding: 5px;
-}
+} */
 
-ul {
+/* ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -37,22 +37,22 @@ ul {
 .starred {
   float: left;
   width: 100%;
-}
+} */
 
-.actions {
+/* .actions {
   display: flex;
   justify-content: space-between;
-}
+} */
 
-.actions button {
+/* .actions button {
   font-size: 20px;
   font-weight: 700;
   height: 50px;
   text-transform: uppercase;
   width: 48%;
-}
+} */
 
-.repos li,
+/* .repos li,
 .starred li {
   padding: 10px 0;
 }
@@ -60,4 +60,4 @@ ul {
 .repos li + li,
 .starred li + li {
   border-top: 1px solid #ccc;
-}
+} */
