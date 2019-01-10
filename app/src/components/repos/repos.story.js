@@ -1,7 +1,18 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
+import Repos from './repos'
 
-storiesOf('Repos', module)
-    .add('first repos story', () => (
-        <h1>Repos</h1>
-    ))
+storiesOf('Repos components', module)
+    .add('with title prop', () => (
+        <Repos title="Repos" />
+))
+
+    .add('with repos', () => (
+    <Repos
+        title='Favoritos'
+        repos={[{
+            link: 'https://github.com/lucashsmoraes',
+            name: 'GitHub Lucas Moraes'      
+        }]}
+    />
+))

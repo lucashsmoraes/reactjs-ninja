@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions';
 import Actions from './index'
 
-storiesOf('Actions', module)
+storiesOf('Actions component', module)
     .add('first story', () => (
         <Actions 
         getRepos={action('Get Repos')} 

@@ -12,4 +12,8 @@ const Search = ({ isDisabled, handleSearch }) => (
   </div>
 )
 
+// Search.defaultProps = {
+//   handleSearch: 'lucashsmoraes'
+// }
+
 export default Search

@@ -14,4 +14,9 @@ const Repos = ({ className, title, repos }) => (
   </div>
 )
 
+Repos.defaultProps = {
+  className: '',
+  repos: []
+}
+
 export default Repos
