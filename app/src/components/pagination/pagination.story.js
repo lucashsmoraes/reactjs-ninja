@@ -19,3 +19,7 @@ stories.add('with props 7', () => (
 stories.add('with props 15', () => (
     <Pagination total={15} activePage={8} />
 ))
+
+stories.add('with props 15 and link', () => (
+    <Pagination total={15} activePage={8} pageLink='http://mypage.com/page/%page%' />
+))
