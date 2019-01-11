@@ -11,13 +11,14 @@ class App extends Component {
       starred: [],
       isFetching: false
     }
+    this.perPage = 3
     this.handleSearch = this.handleSearch.bind(this)
   }
 
   getGitHubApiUrl (username, type) {
     const internalType = type ? `/${type}` : ''
     const internalUsern = username ? `/${username}` : ''
-    return `https://api.github.com/users${internalUsern}${internalType}`
+    return `https://api.github.com/users${internalUsern}${internalType}?per_page=${this.perPage}`
   }
 
   handleSearch (e) {
