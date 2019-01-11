@@ -5,7 +5,7 @@ import Page from './page'
 const Pagination = ({total, activePage, pageLink, onClick}) => (
     <ul>
         {pagination({total, activePage}).map((page, index) => (
-            <li key={index}> 
+            <li key={index} style={activePage === page ? {color: 'red'} : null }> 
              <Page page={page} pageLink={pageLink.replace('%page%', page)} onClick={onClick}/> 
             </li>
         ))}
@@ -13,7 +13,8 @@ const Pagination = ({total, activePage, pageLink, onClick}) => (
 )
 
 Pagination.defaultProps = {
-    pageLink: ''
+    pageLink: '',
+    activePage: 1
 }
 
 
