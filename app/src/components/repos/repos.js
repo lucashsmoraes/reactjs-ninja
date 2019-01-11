@@ -1,5 +1,6 @@
 import React from 'react'
 import './repos.css'
+import Pagination from '../pagination'
 
 const Repos = ({ className, title, repos }) => (
   <div className={className}>
@@ -11,6 +12,8 @@ const Repos = ({ className, title, repos }) => (
         </li>
       ))}
     </ul>
+
+    <Pagination total={10}/>
   </div>
 )
 
