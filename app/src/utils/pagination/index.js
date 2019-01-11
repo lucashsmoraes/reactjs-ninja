@@ -1,15 +1,21 @@
 
 const centerRule = ({ total, activePage }) => {
-   if (activePage -1 <= 0){
-      return 1
-   }
-   if (activePage === total){
-      return activePage - 2
-   }
-   return activePage - 1
+   return activePage - 1 <= 0 ? 1 
+      : activePage === total ? activePage - 2 
+      : activePage -1
 }
 
-const Pagination = ({total, activePage}) => {
+const isNumber = (value1) => typeof value1 === 'number'
+
+const Pagination = ({total=1, activePage = 1} = {}) => {
+
+   if (!isNumber(total)){
+      throw new TypeError('total should be a number')
+   }
+   if (!isNumber(activePage)){
+      throw new TypeError('activePage should be a number')
+   }
+
    if(total <= 5){
       return Array.from({length: total}, (_, i) => i + 1)
    }
@@ -19,9 +25,10 @@ const Pagination = ({total, activePage}) => {
       ...Array.from({ length: visiblePages }, (_, i) => i + centerRule({total, activePage})),
       total
    ]
-
+   
+   // remover números repetidos
    pages = pages.filter((page, index, array) => array.indexOf(page) === index)
-
+   
    let firstPage = pages[0]
    let secondPage = pages[1]
    if (secondPage === (firstPage + 2)){
