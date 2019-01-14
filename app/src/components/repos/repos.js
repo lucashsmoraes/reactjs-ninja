@@ -13,13 +13,12 @@ const Repos = ({ className, title, repos, handlePagination }) => (
       ))}
     </ul>
 
-    <Pagination total={5} activePage={3} onClick={handlePagination}/>
+    <Pagination total={4} activePage={repos.pagination.activePage} onClick={handlePagination}/>
   </div>
 )
 
 Repos.defaultProps = {
-  className: '',
-  repos: {}
+  className: ''
 }
 
 export default Repos
