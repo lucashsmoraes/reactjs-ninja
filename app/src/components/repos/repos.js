@@ -13,7 +13,7 @@ const Repos = ({ className, title, repos, handlePagination }) => (
       ))}
     </ul>
 
-    <Pagination total={4} activePage={repos.pagination.activePage} onClick={handlePagination}/>
+    <Pagination total={repos.pagination.total} activePage={repos.pagination.activePage} onClick={handlePagination}/>
   </div>
 )
 
