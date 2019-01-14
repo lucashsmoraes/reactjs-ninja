@@ -2,7 +2,7 @@ import React from 'react'
 import './repos.css'
 import Pagination from '../pagination'
 
-const Repos = ({ className, title, repos }) => (
+const Repos = ({ className, title, repos, handlePagination }) => (
   <div className={className}>
     <h2>{ title } </h2>
     <ul>
@@ -13,7 +13,7 @@ const Repos = ({ className, title, repos }) => (
       ))}
     </ul>
 
-    <Pagination total={10}/>
+    <Pagination total={10} activePage={3} onClick={handlePagination}/>
   </div>
 )
 
