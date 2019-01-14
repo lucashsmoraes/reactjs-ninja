@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
 import AppContent from './components/app-content/index'
 import ajax from '@fdaciuk/ajax'
+import token from './token'
+
+const initialReposState = {
+  repos: [],
+  pagination: {}
+}
 
 class App extends Component {
   constructor () {
     super()
     this.state = {
       userInfo: null,
-      repos: [],
-      starred: [],
+      repos: initialReposState,
+      starred: initialReposState,
       isFetching: false
     }
     this.perPage = 3
@@ -17,8 +23,9 @@ class App extends Component {
 
   getGitHubApiUrl (username, type, page = 1) {
     const internalType = type ? `/${type}` : ''
-    const internalUsern = username ? `/${username}` : ''
-    return `https://api.github.com/users${internalUsern}${internalType}?per_page=${this.perPage}&page=${page}`
+    const internalUser = username ? `/${username}` : ''
+    const access_token = token.GITHUB
+    return `https://api.github.com/users${internalUser}${internalType}?per_page=${this.perPage}&page=${page}&access_token=${access_token}`
   }
 
   handleSearch (e) {
@@ -38,8 +45,8 @@ class App extends Component {
               followers: result.followers,
               following: result.following
             },
-            repos: [],
-            starred: []
+            repos: initialReposState,
+            starred: initialReposState
           })
         })
         .always(() => this.setState({ isFetching: false }))
@@ -52,10 +59,13 @@ class App extends Component {
       ajax().get(this.getGitHubApiUrl(username, type, page))
         .then((result) => {
           this.setState({
-            [type]: result.map((repo) => ({
-              name: repo.name,
-              link: repo.html_url
-            }))
+            [type]: {
+              repos: result.map((repo) => ({
+                name: repo.name,
+                link: repo.html_url
+              })),
+              pagination: this.state[type].pagination
+            }
           })
         })
     }

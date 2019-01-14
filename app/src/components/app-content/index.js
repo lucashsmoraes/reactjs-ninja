@@ -21,18 +21,18 @@ const AppContent = ({ userInfo,
     {!!userInfo && <UserInfo userInfo={userInfo} />}
     {!!userInfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
 
-    {!!repos.length && <Repos
+    {!!repos.repos.length && <Repos
       className='repos'
       title='Repositórios:'
       repos={repos}
-      handlePagination={(clicked) => handlePagination('repos:', clicked)}
+      handlePagination={(clicked) => handlePagination('repos', clicked)}
     />}
 
-    {!!starred.length && <Repos
+    {!!starred.repos.length && <Repos
       className='starred'
       title='Favoritos:'
       repos={starred}
-      handlePagination={(clicked) => handlePagination('starred:', clicked)}
+      handlePagination={(clicked) => handlePagination('starred', clicked)}
     />}
   </div>
 )
