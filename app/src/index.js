@@ -3,8 +3,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { render } from 'react-dom'
 
-import './css/style.css'
-
 const renderApp = (NextApp) => {
   render(
       <NextApp />,

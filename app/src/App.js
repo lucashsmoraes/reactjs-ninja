@@ -1,92 +1,31 @@
 import React, { Component } from 'react'
-import AppContent from './components/app-content/index'
-import ajax from '@fdaciuk/ajax'
-import token from './token'
-
-const initialReposState = {
-  repos: [],
-  pagination: {
-    total: 1,
-    activePage: 1
-  }
-}
+import Title from './components/Title';
 
 class App extends Component {
   constructor () {
     super()
-    this.state = {
-      userInfo: null,
-      repos: initialReposState,
-      starred: initialReposState,
-      isFetching: false
-    }
-    this.perPage = 3
-    this.handleSearch = this.handleSearch.bind(this)
+    this.state = { title: '...'}
   }
 
-  getGitHubApiUrl (username, type, page = 1) {
-    const internalType = type ? `/${type}` : ''
-    const internalUser = username ? `/${username}` : ''
-    const access_token = token.GITHUB
-    return `https://api.github.com/users${internalUser}${internalType}?per_page=${this.perPage}&page=${page}&access_token=${access_token}`
+  getTitle () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("My app with async / await!")
+      },2000)      
+    })
   }
 
-  handleSearch (e) {
-    const value = e.target.value
-    const KeyCode = e.which || e.keyCode
-    const ENTER = 13
-    if (KeyCode === ENTER) {
-      this.setState({ isFetching: true })
-      ajax().get(this.getGitHubApiUrl(value))
-        .then((result) => {
-          this.setState({
-            userInfo: {
-              username: result.name,
-              photo: result.avatar_url,
-              login: result.login,
-              repos: result.public_repos,
-              followers: result.followers,
-              following: result.following
-            },
-            repos: initialReposState,
-            starred: initialReposState
-          })
-        })
-        .always(() => this.setState({ isFetching: false }))
-    }
-  }
-
-  getRepos (type, page) {
-    return (e) => {
-      const username = this.state.userInfo.login
-      ajax().get(this.getGitHubApiUrl(username, type, page))
-        .then((result, xhr) => {
-          const linkHeader = xhr.getResponseHeader('Link') || ''
-          const totalPagesMatch = linkHeader.match(/&page=(\d+)&access_token=aqui fica o token >; rel="last/)
-          this.setState({
-            [type]: {
-              repos: result.map((repo) => ({
-                name: repo.name,
-                link: repo.html_url
-              })),
-              pagination: {
-                total: totalPagesMatch ? +totalPagesMatch[1] : this.state[type].pagination.total,
-                activePage: page
-              }
-            }
-          })
-        })
-    }
+  async componentDidMount () {
+    this.setState({ title: await this.getTitle()})
   }
 
   render () {
-    return <AppContent
-      {...this.state}
-      handleSearch={this.handleSearch}
-      getRepos={this.getRepos('repos')}
-      getStarred={this.getRepos('starred')}
-      handlePagination={(type, page) => this.getRepos(type, page)()}
-    />
+    return (
+      <div>
+        <Title>{this.state.title}</Title>
+      </div>
+    )
+    
   }
 }
 
