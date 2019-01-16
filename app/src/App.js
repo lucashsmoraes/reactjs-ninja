@@ -1,38 +1,34 @@
 import React, { Component } from 'react'
+import './css/style.css'
+
 
 class App extends Component {
-  constructor () {
+  constructor() {
     super()
-    this.state = { 
-      counter: 0
-    }
+    this.state = { value: '' }
+
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  // getTitle () {
-  //   return new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       resolve("My app with async / await!")
-  //     },2000)      
-  //   })
-  // }
-
-  async componentDidMount () {
-    // const title = await import('./components/Title')
-    // this.setState({
-    //   title: await this.getTitle(),
-    //   Component: title.default
-    // })
-    this.setState((state) => ({counter: state.counter + 1}))  
+  handleSubmit(e) {
+    e.preventDefault()
+    this.setState({
+      value: e.target.textarea.value
+    })
   }
 
-  render () {
-    const {counter} = this.state
+  render() {
     return (
-      <div>
-        counter: {counter}
+      <div className='editor'>
+        <form onSubmit={this.handleSubmit}>
+          <textarea name='textarea' />
+          <button type='submit'> Rendereizar markup </button>
+        </form>
+        <div className='view'>
+          {this.state.value}
+        </div>
       </div>
     )
-    
   }
 }
 
