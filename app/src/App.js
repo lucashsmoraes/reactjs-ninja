@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import Title from './components/Title';
 
 class App extends Component {
   constructor () {
     super()
-    this.state = { title: '...'}
+    this.state = { title: '...',
+    Component : 'div'
+    }
   }
 
   getTitle () {
@@ -16,13 +17,17 @@ class App extends Component {
   }
 
   async componentDidMount () {
-    this.setState({ title: await this.getTitle()})
+    const title = await import('./components/Title')
+    this.setState({
+      title: await this.getTitle(),
+      Component: title.default
+    })  
   }
 
   render () {
     return (
       <div>
-        <Title>{this.state.title}</Title>
+        <this.state.Component>{this.state.title}</this.state.Component>
       </div>
     )
     
