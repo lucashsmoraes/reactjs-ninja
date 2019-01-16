@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import MarkdownEditor from './components/markdown/markdown-editor'
 import './css/style.css'
 
 
@@ -7,27 +8,20 @@ class App extends Component {
     super()
     this.state = { value: '' }
 
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  handleSubmit(e) {
+  handleChange(e) {
     e.preventDefault()
     this.setState({
-      value: e.target.textarea.value
+      value: e.target.value,
+      count: e.target.value.length
     })
   }
 
   render() {
     return (
-      <div className='editor'>
-        <form onSubmit={this.handleSubmit}>
-          <textarea name='textarea' />
-          <button type='submit'> Rendereizar markup </button>
-        </form>
-        <div className='view'>
-          {this.state.value}
-        </div>
-      </div>
+      <MarkdownEditor value={this.state.value} count={this.state.count} handleChange={this.handleChange}/>
     )
   }
 }
