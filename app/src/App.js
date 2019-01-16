@@ -9,19 +9,27 @@ class App extends Component {
     this.state = { value: '' }
 
     this.handleChange = this.handleChange.bind(this)
+    this.getMarkup = this.getMarkup.bind(this)
   }
 
   handleChange(e) {
     e.preventDefault()
     this.setState({
-      value: e.target.value,
-      count: e.target.value.length
+      value: e.target.value
     })
+  }
+
+  getMarkup() {
+    return { __html: this.state.value }
   }
 
   render() {
     return (
-      <MarkdownEditor value={this.state.value} count={this.state.count} handleChange={this.handleChange}/>
+      <MarkdownEditor
+        value={this.state.value}
+        handleChange={this.handleChange} 
+        getMarkup={this.getMarkup}
+      />
     )
   }
 }

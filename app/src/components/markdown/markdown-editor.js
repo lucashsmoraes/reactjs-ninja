@@ -1,11 +1,10 @@
 import React from 'react'
 
-const MarkdownEditor = ({value, count,handleChange}) => (
+const MarkdownEditor = ({value, handleChange, getMarkup}) => (
     <div className='editor'>
-        <textarea name='textarea' value={value} onChange={handleChange} />
-        <div className='view'>
-            {value}
-            <div><h2>Count caracteres: {count}</h2></div>
+        <textarea name='textarea' value={value} onChange={handleChange} autoFocus />
+        <div className='view' dangerouslySetInnerHTML={ getMarkup() } >
+            {/* {value} */}
         </div>
         
     </div>
