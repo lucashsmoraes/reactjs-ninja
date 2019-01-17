@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from './markdown-editor.header'
 
-const MarkdownEditor = ({ value, isSaving, handleChange, handleRemove, getMarkup }) => (
+const MarkdownEditor = ({ value, handleChange, getMarkup, textareaRef, ...props }) => (
     <section className='editor'>
-        <Header isSaving={isSaving} handleRemove={handleRemove}/>
-        <textarea value={value} onChange={handleChange} autoFocus />  
+        <Header {...props} />
+        <textarea value={value} onChange={handleChange} autoFocus ref={textareaRef} />  
         <article className='view' dangerouslySetInnerHTML={getMarkup()} />
         {/* {value} */}
     </section>

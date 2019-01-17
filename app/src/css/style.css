@@ -49,12 +49,25 @@ body {
   background: red;
   color: #fff;
   font-weight: 700;
-  padding: 0 20px;
+  padding: 0 13px;
   text-transform: uppercase;
 }
 
 .button-remove:hover {
   background: darkred;
+}
+
+.button-create {
+  border: 0;
+  background: blue;
+  color: #fff;
+  font-weight: 700;
+  padding: 0 12px;
+  text-transform: uppercase;
+}
+
+.button-create:hover {
+  background: darkblue;
 }
 
 textarea,
