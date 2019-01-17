@@ -3,32 +3,58 @@ import MarkdownEditor from './components/markdown/markdown-editor'
 import marked from 'marked'
 import './css/style.css'
 
-
+import hljs from 'highlight.js'
+marked.setOptions({
+  highlight: (code) => {
+    return hljs.highlightAuto(code).value
+  }
+})
 
 class App extends Component {
+
   constructor() {
     super()
-    this.state = { value: '' }
+    this.state = { 
+      value: '',
+      isSaving: false
+    }
 
-    this.handleChange = this.handleChange.bind(this)
-    this.getMarkup = this.getMarkup.bind(this)
+    this.handleChange = (e) => {
+      e.preventDefault()
+      this.setState({
+        value: e.target.value,
+        isSaving: true
+      })
+    }
+    this.handleSave = () => {
+      localStorage.setItem('md', this.state.value)
+      this.setState({
+        isSaving: false
+      })
+    }
+    this.getMarkup = () => {
+      return { __html: marked(this.state.value) }
+    }
   }
 
-  handleChange(e) {
-    e.preventDefault()
-    this.setState({
-      value: e.target.value
-    })
+  componentDidMount () {
+    this.handleSave()
+  }
+  
+  componentDidUpdate () {
+    clearInterval(this.timer)
+    this.timer = setTimeout(this.handleSave, 1000)
   }
 
-  getMarkup() {
-    return { __html: marked(this.state.value) }
+  componentWillUnmount () {
+    clearInterval(this.timer)
   }
 
   render() {
     return (
       <MarkdownEditor
         value={this.state.value}
+        isSaving={this.state.isSaving}
         handleChange={this.handleChange} 
         getMarkup={this.getMarkup}
       />
