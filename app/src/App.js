@@ -11,7 +11,6 @@ marked.setOptions({
 })
 
 class App extends Component {
-
   constructor() {
     super()
     this.state = { 
@@ -38,12 +37,14 @@ class App extends Component {
   }
 
   componentDidMount () {
+    const value = localStorage.getItem('md')
+    this.setState({value})
     this.handleSave()
   }
   
   componentDidUpdate () {
     clearInterval(this.timer)
-    this.timer = setTimeout(this.handleSave, 1000)
+    this.timer = setTimeout(this.handleSave, 300)
   }
 
   componentWillUnmount () {
