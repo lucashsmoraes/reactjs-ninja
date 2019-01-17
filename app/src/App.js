@@ -25,12 +25,19 @@ class App extends Component {
         isSaving: true
       })
     }
-    this.handleSave = () => {
-      localStorage.setItem('md', this.state.value)
-      this.setState({
-        isSaving: false
-      })
+    this.handleSave = () => {      
+      if (this.state.isSaving){
+        localStorage.setItem('md', this.state.value)
+        this.setState({
+          isSaving: false
+        })
+      }
+      
     }
+    this.handleRemove = () => {
+      localStorage.removeItem('md')
+    }
+
     this.getMarkup = () => {
       return { __html: marked(this.state.value) }
     }
@@ -38,7 +45,7 @@ class App extends Component {
 
   componentDidMount () {
     const value = localStorage.getItem('md')
-    this.setState({value})
+    this.setState({value: value || ''})    
     this.handleSave()
   }
   
@@ -56,7 +63,8 @@ class App extends Component {
       <MarkdownEditor
         value={this.state.value}
         isSaving={this.state.isSaving}
-        handleChange={this.handleChange} 
+        handleChange={this.handleChange}
+        handleRemove={this.handleRemove} 
         getMarkup={this.getMarkup}
       />
     )

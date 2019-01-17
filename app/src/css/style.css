@@ -44,7 +44,18 @@ body {
   padding: 0 20px;
 }
 
+.button-remove {
+  border: 0;
+  background: red;
+  color: #fff;
+  font-weight: 700;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
 
+.button-remove:hover {
+  background: darkred;
+}
 
 textarea,
 .view {
