@@ -63,3 +63,9 @@ textarea:focus {
   overflow: auto;
   padding: 10px;
 }
+
+.files-list-container {
+  background: #929993;
+  min-width: 20%;
+  max-width: 20%;
+}
