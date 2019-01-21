@@ -8,6 +8,7 @@ class App extends Component {
   constructor() {
     super()
     this.clearlState = () => ({
+      title: '',
       value: '',
       id: v4()
     })
@@ -16,20 +17,22 @@ class App extends Component {
       ...this.clearlState(),
       isSaving: null,
       files: {}
+
     }
 
 
-    this.handleChange = (e) => {
+    this.handleChange = (field) => (e) => {
       e.preventDefault()
       this.setState({
-        value: e.target.value,
+        [field]: e.target.value,
         isSaving: true
       })
     }
+
     this.handleSave = () => {
       if (this.state.isSaving) {
         const newFile = {
-          title: 'sem titulo',
+          title: this.state.title || 'Sem título',
           content: this.state.value
         }
         localStorage.setItem(this.state.id, JSON.stringify(newFile))
@@ -74,6 +77,7 @@ class App extends Component {
 
     this.handleOpenfile = (fileId) => () => {
       this.setState({
+        title: this.state.files[fileId].title,
         value: this.state.files[fileId].content,
         id: fileId
       })
@@ -111,6 +115,7 @@ class App extends Component {
         files={this.state.files}
         handleOpenfile={this.handleOpenfile}
         textareaRef={this.textareaRef}
+        title={this.state.title}
       />
     )
   }
