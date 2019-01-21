@@ -28,12 +28,16 @@ class App extends Component {
     }
     this.handleSave = () => {
       if (this.state.isSaving) {
-        localStorage.setItem(this.state.id, this.state.value)
+        const newFile = {
+          title: 'sem titulo',
+          content: this.state.value
+        }
+        localStorage.setItem(this.state.id, JSON.stringify(newFile))
         this.setState({
           isSaving: false,
           files: {
             ...this.state.files,
-            [this.state.id]: this.state.value
+            [this.state.id]: newFile
           }
         })
       }
@@ -48,11 +52,11 @@ class App extends Component {
       localStorage.removeItem(this.state.id)
       let files = Object.keys(this.state.files).reduce((acc, fileId) => {
         return fileId === this.state.id ? acc : {
-          ...acc, 
+          ...acc,
           [fileId]: this.state.files[fileId]
         }
       }, {})
-      this.setState({files})
+      this.setState({ files })
       this.createNew()
     }
 
@@ -70,18 +74,18 @@ class App extends Component {
 
     this.handleOpenfile = (fileId) => () => {
       this.setState({
-        value: this.state.files[fileId],
+        value: this.state.files[fileId].content,
         id: fileId
       })
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const filesStorage = Object.keys(localStorage)
     this.setState({
       files: filesStorage.reduce((acc, fileId) => ({
-          ...acc,
-          [fileId]: localStorage.getItem(fileId)
+        ...acc,
+        [fileId]: JSON.parse(localStorage.getItem(fileId))
       }), {})
     })
   }
