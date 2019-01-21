@@ -83,7 +83,7 @@ class App extends Component {
   componentDidMount() {
     const filesStorage = Object.keys(localStorage)
     this.setState({
-      files: filesStorage.reduce((acc, fileId) => ({
+      files: filesStorage.filter((id) => id.match(/^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$/)).reduce((acc, fileId) => ({
         ...acc,
         [fileId]: JSON.parse(localStorage.getItem(fileId))
       }), {})
